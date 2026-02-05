@@ -79,11 +79,6 @@ After training, the model should be able to:
 - Format tool calls properly
 - Handle multiple tool calls in one response
 
-## Memory Requirements
-
-- **With 4-bit quantization**: ~8-10 GB VRAM
-- **Without quantization**: ~20-24 GB VRAM
-
 ## Output Files
 
 After training, you'll find:
