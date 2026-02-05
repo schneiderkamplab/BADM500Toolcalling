@@ -108,13 +108,8 @@ print(tokenizer.decode(outputs[0]))
 4. **Train longer**: More epochs or larger datasets need more training
 5. **Tune hyperparameters**: Experiment with learning rate, batch size
 
-## Alternative Formats
-
-Instead of the simple format used here, you could also:
-- Use JSON format for tool calls
-- Follow OpenAI's function calling format
-- Use XML-style tags
-- Implement chain-of-thought reasoning before tool calls
+## Dataset Improvements
+It it the students tasks to exstend and improve the dataset both in size and diversity to work better and generalize to an arbitrary conversation with a user. Note right now, this boilerplate, doesn't even include a validation dataset. You are quite free to think out of the box regarding data e.g. conversations etc. but you must keep the format of the messages (the so-called chat-template), so we later on can parse everyones model's outputs to test accuracy.
 
 ### Tools that your project should support 
 ````Python
