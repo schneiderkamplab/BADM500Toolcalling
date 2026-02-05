@@ -120,6 +120,53 @@ Instead of the simple format used here, you could also:
 - Use XML-style tags
 - Implement chain-of-thought reasoning before tool calls
 
+### Tools that your project should support 
+````Python
+    tools = [
+        {
+            "name": "get_weather",
+            "description": "Get current weather for a location",
+            "parameters": {
+                "location": {"type": "string", "description": "City name"},
+                "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+            }
+        },
+        {
+            "name": "correct_grammar",
+            "description": "Correct grammatical errors in text using GEC API",
+            "parameters": {
+                "text": {"type": "string", "description": "Text to check and correct"}
+            }
+        },
+        {
+            "name": "generate_image",
+            "description": "Generate an image from a text description",
+            "parameters": {
+                "prompt": {"type": "string", "description": "Description of the image to generate"},
+                "style": {"type": "string", "description": "Art style (optional)"}
+            }
+        },
+        {
+            "name": "text_to_speech",
+            "description": "Convert text to speech audio",
+            "parameters": {
+                "text": {"type": "string", "description": "Text to convert to speech"},
+                "voice": {"type": "string", "description": "Voice type (male/female/neutral)"}
+            }
+        },
+        {
+            "name": "search_web",
+            "description": "Search the web for information",
+            "parameters": {
+                "query": {"type": "string", "description": "Search query"}
+            }
+        }
+    ]
+    
+```
+
+
+
 ## Common Issues
 
 **Out of Memory**: Reduce batch size or increase gradient accumulation steps
