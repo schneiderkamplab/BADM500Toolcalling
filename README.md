@@ -9,11 +9,11 @@ This example demonstrates how to fine-tune Google's Gemma 270m model for tool ca
 ## Overview 
 
 This example of training pipeline includes:
-1. **Synthetic Dataset Creation**: 10 examples covering weather queries, calculations, web searches, and regular conversation
-2. **Completion-Only Training**: Only compute loss on assistant responses
+1. **Synthetic Dataset Creation**: 10 examples covering weather queries, calculations, web searches, and regular conversation.
+2. **Completion-Only Training**: Only compute loss on assistant responses.
 
 ## Installation
-You can use all commond environment managers: `uv`, `pip`, or `conda` 
+You can use all command environment managers: `uv`, `pip`, or `conda` 
 
 Example for pip (prepend `uv` for using uv): 
 ```bash
@@ -40,11 +40,11 @@ I'm doing well, thank you! How can I help you today?
 
 ## Available Tools in *your* Dataset
 
-1. **get_weather**: Get current weather for a location
-2. **correct_grammar**: Correct the setence
-3. **generate_image**: Generate and image from description  
-4. **Speech Synthesis**: Generate speech based on text input  
-5. **search_web**: Search the web for information
+1. **get_weather**: Get the current weather for a given location.
+2. **correct_grammar**: Correct the given sentence.
+3. **generate_image**: Generate an image from a given description.
+4. **Speech Synthesis**: Generate speech based on a given text input.
+5. **search_web**: Search the web for information relevant to the given prompt.
 
 ## Running the Training
 The training is rooted in `train.py`. 
@@ -67,21 +67,21 @@ Example configuration:
 - **Epochs**: 30
 - **Optimizer**: adamw
 
-We encourage students to explore different settings and new parameters! E.g. look into other optimizers, LR-Schedulars, even batch-size can help performance.
+We encourage students to explore different settings and new parameters! E.g., look into other optimizers, LR-Schedulars; even adjusting batch-size can help performance.
 
 ## Expected Output
 
 After training, the model should be able to:
-- Recognize when to call tools vs respond normally
-- Extract correct parameters from user queries
-- Format tool calls properly
-- Handle multiple tool calls in one response
+- Recognize when to call tools vs respond normally.
+- Format tool calls properly.
+- Extract correct parameters from user queries.
+- Handle multiple tool calls in one response.
 
 ## Output Files
 
 After training, you'll find:
-- `.gemma-270m-tool-calling`: Checkpoints during training
-- `.gemma-270m-tool-calling`: Final trained model with 
+- `.gemma-270m-tool-calling/checkpoint-<STEPS>`: Checkpoints during training.
+- `.gemma-270m-tool-calling`: Final trained model with.
 
 ## Using the Trained Model
 
@@ -102,14 +102,14 @@ print(tokenizer.decode(outputs[0]))
 
 ## Tips for Better Results
 
-1. **Increase dataset size**: 100-1000 examples work much better
-2. **Add variety**: Include edge cases, ambiguous queries, multi-turn conversations
-3. **Balance dataset**: Equal distribution of tool calls vs regular responses
-4. **Train longer**: More epochs or larger datasets need more training
-5. **Tune hyperparameters**: Experiment with learning rate, batch size
+1. **Increase dataset size**: 100-1000 or even more examples work much better.
+2. **Add variety**: Include edge cases, ambiguous queries, and multi-turn conversations.
+3. **Balance dataset**: Ensure equal distribution of tool calls vs regular responses.
+4. **Train longer**: More epochs or larger datasets need more training.
+5. **Tune hyperparameters**: Experiment with learning rate, batch size, optimizer, and other details of the training.
 
 ## Dataset Improvements
-It it the students tasks to exstend and improve the dataset both in size and diversity to work better and generalize to an arbitrary conversation with a user. Note right now, this boilerplate, doesn't even include a validation dataset. You are quite free to think out of the box regarding data e.g. conversations etc. but you must keep the format of the messages (the so-called chat-template), so we later on can parse everyones model's outputs to test accuracy.
+It it the students tasks to exstend and improve the dataset both in size and diversity to work better and generalize to an arbitrary conversation with a user. Note that, right now, this boilerplate does not even include a validation dataset. You are quite free to think out of the box regarding the data (e.g. conversations etc), but you must keep the format of the messages (the so-called chat-template), so we later on can parse the outputs of all your models to test accuracy.
 
 ### Tools that your project should support 
 ````Python
@@ -153,16 +153,13 @@ It it the students tasks to exstend and improve the dataset both in size and div
             }
         }
     ]
-    
 ````
-
-
 
 ## Common Issues
 
-**Out of Memory**: Reduce batch size or increase gradient accumulation steps
-**Poor performance**: Add more diverse training examples
-**Model not calling tools**: Ensure balanced dataset with both tool and non-tool examples
+**Out of Memory**: Reduce batch size or increase gradient accumulation steps.
+**Poor performance**: Add more diverse training examples.
+**Model not calling tools**: Ensure balanced dataset with both tool and non-tool examples.
 
 ## Resources
 
