@@ -43,8 +43,10 @@ I'm doing well, thank you! How can I help you today?
 ## Available Tools in Dataset
 
 1. **get_weather**: Get current weather for a location
-2. **calculate**: Perform mathematical calculations
-3. **search_web**: Search the web for information
+2. **correct_grammar**: Correct the setence
+3. **generate_image**: Generate and image from description  
+4. **Speech Synthesis**: Generate speech based on text input  
+5. **search_web**: Search the web for information
 
 ## Running the Training
 The training is rooted in `train.py`. 
