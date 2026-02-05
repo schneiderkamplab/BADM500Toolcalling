@@ -1,10 +1,8 @@
 # BADM500: Fine-tuning Gemma 270M for Tool Calling with TRL
 
-
 <p align="center">
   <img src="assets/overview.png" alt="Description" width="600"/>
 </p>
-
 
 This example demonstrates how to fine-tune Google's Gemma 270m model for tool calling using the TRL (Transformer Reinforcement Learning) library form Hugginface
 
@@ -177,3 +175,7 @@ Instead of the simple format used here, you could also:
 - [PEFT Documentation](https://huggingface.co/docs/peft)
 - [Gemma Model Card](https://huggingface.co/google/gemma-2-270m-it)
 
+# We hope you're having a lot of fun!
+<p align="center">
+  <img src="assets/psk_cartoon.png" alt="Description" width="600"/>
+</p>
