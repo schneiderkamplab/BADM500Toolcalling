@@ -68,6 +68,7 @@ Example configuration:
 - **Learning Rate**: 2e-4
 - **Epochs**: 30
 - **Optimizer**: adamw
+
 We encourage students to explore different settings and new parameters! E.g. look into other optimizers, LR-Schedulars, even batch-size can help performance.
 
 ## Expected Output
