@@ -65,8 +65,6 @@ Example configuration:
 - **Optimizer**: adamw
 We encourage students to explore different settings and new parameters! E.g. look into other optimizers, LR-Schedulars, even batch-size can help performance.
 
-## Key Components Explained
-
 ## Expected Output
 
 After training, the model should be able to:
@@ -162,7 +160,7 @@ Instead of the simple format used here, you could also:
         }
     ]
     
-```
+````
 
 
 
