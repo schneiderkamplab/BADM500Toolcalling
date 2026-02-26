@@ -47,7 +47,7 @@ I'm doing well, thank you! How can I help you today?
 5. **search_web**: Search the web for information relevant to the given prompt.
 
 ## Tool Verification 
-To verify the tools you created, please run the verifier for sanity 
+To verify the tool-call conversations you created, please run the verifier for sanity 
 ```bash
     python3 tools/validate_tools.py tools/data/example.jsonl
 ```
