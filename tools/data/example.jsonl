@@ -1,0 +1,11 @@
+{"messages": [{"role": "user", "content": "What's the weather like in Paris?"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "get_weather", "arguments": {"location": "Paris", "unit": "celsius"}}]}]}
+{"messages": [{"role": "user", "content": "Can you tell me the weather in New York in Fahrenheit?"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "get_weather", "arguments": {"location": "New York", "unit": "fahrenheit"}}]}]}
+{"messages": [{"role": "user", "content": "Please fix this sentence: She go to school yesterday."}, {"role": "assistant", "content": "", "tool_calls": [{"name": "correct_grammar", "arguments": {"text": "She go to school yesterday."}}]}]}
+{"messages": [{"role": "user", "content": "Create an image of a sunset"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "generate_image", "arguments": {"prompt": "sunset over mountains", "style": "realistic"}}]}]}
+{"messages": [{"role": "user", "content": "Convert this to audio: Hello world."}, {"role": "assistant", "content": "", "tool_calls": [{"name": "text_to_speech", "arguments": {"text": "Hello world.", "voice": "neutral"}}]}]}
+{"messages": [{"role": "user", "content": "Find info about quantum computing"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "search_web", "arguments": {"query": "quantum computing"}}]}]}
+{"messages": [{"role": "user", "content": "Hello!"}, {"role": "assistant", "content": "Hi there! How can I help?"}]}
+{"messages": [{"role": "user", "content": "Multi-tool: weather + grammar"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "get_weather", "arguments": {"location": "Tokyo", "unit": "celsius"}}, {"name": "correct_grammar", "arguments": {"text": "I has been there before."}}]}]}
+{"messages": [{"role": "user", "content": "Bad tool name"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "invalid_tool", "arguments": {}}]}]}
+{"messages": [{"role": "user", "content": "Missing required arg"}, {"role": "assistant", "content": "", "tool_calls": [{"name": "get_weather", "arguments": {"location": "Berlin"}}]}]}
+{"messages": [{"role": "assistant", "content": "Starts with assistant — invalid"}]}
