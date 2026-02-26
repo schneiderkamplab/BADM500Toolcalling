@@ -46,6 +46,12 @@ I'm doing well, thank you! How can I help you today?
 4. **speech_synthesis**: Generate speech based on a given text input.
 5. **search_web**: Search the web for information relevant to the given prompt.
 
+## Tool Verification 
+To verify the tools you created, please run the verifier for sanity 
+```bash
+    python3 tools/validate_tools.py tools/data/example.jsonl
+```
+
 ## Running the Training
 The training is rooted in `train.py`. 
 ```bash
