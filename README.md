@@ -172,6 +172,190 @@ It it the students tasks to exstend and improve the dataset both in size and div
 - [TRL Documentation](https://huggingface.co/docs/trl)
 - [PEFT Documentation](https://huggingface.co/docs/peft)
 - [Gemma Model Card](https://huggingface.co/google/gemma-2-270m-it)
+- [vLLM](https://vllm.ai)
+
+
+## Data generation Overview
+Install an inference engine like vLLM or SGLang. This means you can use optimizations like dynamic batching (look it up!). See vLLM installation guide [here](https://docs.vllm.ai/en/latest/getting_started/quickstart/). Installing it with uv is faster and often more stable. 
+
+
+## Running Long Jobs in a Detachable Terminal Environment
+
+When working on remote compute instances (such as those on **uCloud**), it is often necessary to run programs that take a long time to finish. If you run these programs in a normal terminal session, they will stop if your connection drops or if you close the terminal.
+
+To avoid this, you can run your work inside a **detachable terminal session**. Tools such as **tmux**, **screen**, and **byobu** allow you to create persistent terminal sessions that continue running even after you disconnect. You can later reconnect to the same session and continue exactly where you left off.
+
+The typical workflow is:
+
+1. Start a detachable session.
+2. Run commands inside it.
+3. Detach from the session while the processes continue running.
+4. Reattach later to check progress or continue working.
+
+In this guide we will use **tmux**, which is one of the most widely used tools for this purpose.
+
+---
+
+## Basic tmux Usage
+
+ Start a tmux Session
+
+Start a new tmux session:
+
+```bash
+tmux
+```
+
+It is usually better to give the session a name:
+
+```bash
+tmux new -s mysession
+```
+
+You are now inside a tmux session. Any processes started here will keep running even if you disconnect.
+
+---
+
+# Switching Between Windows
+
+Move to the next window:
+
+```
+Ctrl + b, then n
+```
+
+Move to the previous window:
+
+```
+Ctrl + b, then p
+```
+
+Jump to a specific window:
+
+```
+Ctrl + b, then <number>
+```
+
+Example:
+
+```
+Ctrl + b, then 2
+```
+
+---
+
+# Listing Windows
+
+To see all windows in the current session:
+
+```
+Ctrl + b, then w
+```
+
+This opens an interactive menu where you can select a window.
+
+---
+
+# Detaching From a Session
+
+You can leave the tmux session without stopping the programs running inside it.
+
+Detach from the session with:
+
+```
+Ctrl + b, then d
+```
+
+You will return to the normal terminal while the tmux session continues running in the background.
+
+---
+
+# Listing Running Sessions
+
+To see all active tmux sessions:
+
+```bash
+tmux ls
+```
+
+Example output:
+
+```
+mysession: 2 windows (created Fri Mar 6 10:00:00 2026)
+```
+
+---
+
+# Reattaching to a Session
+
+To reconnect to a running session:
+
+```bash
+tmux attach -t mysession
+```
+
+You will return to the session exactly as you left it.
+
+---
+
+## Example Workflow
+
+Start a new session:
+
+```bash
+tmux new -s training
+```
+
+Create a second window for monitoring:
+
+```
+Ctrl + b, then c
+```
+
+In the first window, run a long job:
+
+```bash
+python train_model.py
+```
+
+Switch to another window:
+
+```
+Ctrl + b, then 0
+```
+
+Run a monitoring tool:
+
+```bash
+htop
+```
+
+Detach from the session:
+
+```
+Ctrl + b, then d
+```
+
+Later, reconnect to the session:
+
+```bash
+tmux attach -t training
+```
+
+All windows and running processes will still be active.
+
+---
+
+# Why tmux Is Useful
+
+Using tmux allows you to:
+
+- Run long jobs safely on remote machines
+- Keep processes alive even if your connection drops
+- Work with multiple terminal windows in one session
+- Reattach to your work at any time
+
+This makes tmux an essential tool when working on remote servers, HPC clusters, or cloud computing platforms such as **uCloud**.
 
 # Have a lot of fun!
 <p align="center">
