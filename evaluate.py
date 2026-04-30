@@ -234,7 +234,7 @@ def main(
     checkpoint: str = "",
     model: str = "google/gemma-3-270m-it",
     dataset_path: str = "tools/data/example.jsonl",
-    max_new_tokens: int = 128,
+    max_new_tokens: int = 1024,
     verbose: bool = False,
     output_json: str = "",
 ):
