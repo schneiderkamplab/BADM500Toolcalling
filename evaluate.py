@@ -180,7 +180,7 @@ class Evaluator():
                     "expected_tool_calls": expected_tool_calls,
                     "predicted_tool_calls": pred_tool_calls,
                     "raw_prediction": pred_text,
-                    "initiation_correct": init_ok,
+                    "tool_correct": init_ok,
                     "function_correct": fn_ok,
                     "arguments_correct": args_ok,
                 }
