@@ -187,7 +187,20 @@ class Evaluator():
             )
 
             if verbose:
-                print(f"[{i}/{len(rows)}] init={init_ok} function={fn_ok} args={args_ok}")
+                status = lambda ok: "✓" if ok else "✗"
+                print(f"\n[{i}/{len(rows)}] ── {user_text}")
+                print(f"  {status(init_ok)} initiation   expected_tool={expected_tool}  predicted_tool={pred_tool}")
+                expected_names = [tc.get("name", "") for tc in expected_tool_calls]
+                pred_names = [tc.get("name", "") for tc in pred_tool_calls]
+                print(f"  {status(fn_ok)} function     expected={expected_names}  predicted={pred_names}")
+                for j, (exp_tc, pred_tc) in enumerate(zip(expected_tool_calls, pred_tool_calls)):
+                    exp_args = self._normalize_args(exp_tc.get("arguments", {}))
+                    pred_args = self._normalize_args(pred_tc.get("arguments", {}))
+                    match = exp_args == pred_args
+                    print(f"  {status(match)} args[{j}]      expected={exp_args}  predicted={pred_args}")
+                if not expected_tool_calls and not pred_tool_calls:
+                    print(f"  {status(True)} args         (no tool call expected or predicted)")
+                print(f"  raw: {pred_text!r}")
 
         metrics = {
             "total": total,
